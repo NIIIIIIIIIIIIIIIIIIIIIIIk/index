@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Галерея - Шоссе в никуда</title>
+</head>
+<body>
+    <div class="content-container">
+        <header>
+            <h1>Шоссе в никуда</h1>
+        </header>
+
+        <main>
+            <div class="main-container">
+                <h2>Форма авторизации</h2>
+                <form id="authForm" method="post" action="description.html" onsubmit="return validateForm()">
+                    <label for="username">Логин (4-10 символов):</label>
+                    <input type="text" id="username" name="username" oninput="clearError('usernameError')">
+                    <span class="error" id="usernameError"></span>
+                
+                    <label for="dob">Дата рождения:</label>
+                    <input type="date" id="dob" name="dob" oninput="clearError('dobError')">
+                    <span class="error" id="dobError"></span>
+                
+                    <label for="gender">Пол:</label>
+                    <select id="gender" name="gender" oninput="clearError('genderError')">
+                        <option value="">Выберите пол</option>
+                        <option value="male">Мужской</option>
+                        <option value="female">Женский</option>
+                    </select>
+                    <span class="error" id="genderError"></span>
+                
+                    <button type="submit">Войти</button>
+                </form>
+        
+                <div id="quizResults">
+                    <div id="result1" class="result"></div>
+                    <div id="result2" class="result"></div>
+                    <div id="result3" class="result"></div>
+                    <div id="score"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024</p>
+            <div class="contact-info">
+                <h3>Контактные данные</h3>
+                <p>Телефон: <a href="tel:">+7 (000) 000-00-00</a></p>
+                <p>Социальные сети:</p>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+                <p>Сайт.ру</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        function clearError(errorId) {
+            document.getElementById(errorId).textContent = '';
+        }
+        
+        function validateForm() {
+            let isValid = true;
+
+            // Проверка логина
+            const username = document.getElementById('username').value;
+            if (!/^[а-яА-ЯёЁa-zA-Z0-9]{4,10}$/.test(username)) {
+                document.getElementById('usernameError').textContent = 'Логин должен содержать 4-10 символов.';
+                isValid = false;
+            }
+
+            // Проверка даты рождения
+            const dob = document.getElementById('dob').value;
+            if (!dob) {
+                document.getElementById('dobError').textContent = 'Пожалуйста, введите дату рождения.';
+                isValid = false;
+            }
+
+            // Проверка пола
+            const gender = document.getElementById('gender').value;
+            if (!gender) {
+                document.getElementById('genderError').textContent = 'Пожалуйста, выберите пол.';
+                isValid = false;
+            }
+
+            // Если форма валидна, сохраняем данные и перенаправляем
+            if (isValid) {
+                saveData();
+                window.location.href = "description.htm"; // Перенаправление на страницу профиля
+            }
+
+            return false; // Останавливаем отправку формы
+        }
+
+        function saveData() {
+            const username = document.getElementById('username').value;
+            const dob = document.getElementById('dob').value;
+            const gender = document.getElementById('gender').value;
+
+            localStorage.setItem('username', username);
+            localStorage.setItem('dob', dob);
+            localStorage.setItem('gender', gender);
+        }
+    </script>
+</body>
+</html>

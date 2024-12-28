@@ -1,0 +1,229 @@
+.main-container {
+    max-width: 800px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
+    padding: 20px; /* Отступы внутри контейнера */
+    background-color: rgba(30, 30, 30, 0.95); /* Полупрозрачный темно-серый фон */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Мягкая тень для эффекта */
+}
+
+.retro-title {
+    font-size: 2.5em; /* Размер заголовка */
+    color: #d4af37; /* Приглушенный золотистый цвет заголовка */
+    text-align: center; /* Выравнивание по центру */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Тень для заголовка */
+}
+
+.retro-subtitle {
+    font-size: 1.8em; /* Размер подзаголовка */
+    color: #a3c1e0; /* Приглушенный голубой цвет подзаголовка */
+    margin-top: 30px; /* Отступ сверху */
+    margin-bottom: 10px; /* Отступ снизу */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Тень для подзаголовка */
+}
+
+p {
+    font-size: 1.2em; /* Размер текста абзаца */
+    margin: 10px 0; /* Отступы сверху и снизу */
+    color: #d0d0d0; /* Светло-серый цвет текста для лучшей видимости */
+}
+
+strong {
+    color: #d4af37; /* Приглушенный золотистый цвет для выделенного текста */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Тень для выделенного текста */
+}
+
+.content-container {
+    display: flex; /* Используем flexbox */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    min-height: 100vh; /* Минимальная высота контейнера - 100% высоты окна */
+    min-height: calc(100% - 50px);
+    background: rgba(18, 18, 18, 0.9); /* Полупрозрачный белый фон */
+    padding: 20px; /* Отступы */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Тень */
+    max-width: 800px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
+    position: relative; /* Позиционирование для наложения */
+    z-index: 1; /* Убедитесь, что контейнер выше фона */
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Ретро шрифт */
+    background-color: #1a1a1a; /* Темный фон для создания контраста */
+    color: #474242; /* Светло-серый цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+    background: url('images/image-fon.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    background-color: #555; /* Темный серый фон для заголовка */
+    color: #f0f0f0; /* Светлый текст */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #f0f0f0; /* Светлый цвет ссылок */
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease; /* Плавный переход при наведении */
+}
+
+nav ul li a:hover {
+    transform: scale(1.1); /* Увеличение при наведении */
+    color: #d0d0d0; /* Более светлый цвет при наведении */
+}
+
+nav ul li a.active {
+    font-weight: bold; 
+}
+
+
+main {
+    padding: 20px;
+    animation: slideIn 0.5s ease-in; /* Анимация появления */
+}
+
+form {
+    background-color: #fff; /* Белый фон для формы */
+    border: 2px solid #aaa; /* Серый цвет рамки */
+    padding: 20px;
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Тень */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #aaa; /* Серый цвет рамки */
+    border-radius: 5px; /* Закругленные углы */
+    transition: border-color 0.3s ease; /* Плавный переход цвета рамки */
+}
+
+form input, form select {
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+input:focus, select:focus {
+    border-color: #888; /* Изменение цвета рамки при фокусе */
+}
+
+/* Стили ошибок */
+.error {
+    color: red; 
+    font-size: 0.9em; 
+}
+
+/* Стили подвала */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333; /* Темный цвет подвала */
+    color: #ffcc00; /* Яркий текст */
+}
+
+.slider {
+    position: relative;
+    max-width: 600px; /* Максимальная ширина слайдера */
+    margin: auto; /* Центрирование слайдера */
+    overflow: hidden; /* Скрытие лишнего контента */
+}
+.slides {
+    display: flex; /* Используем flexbox для горизонтального расположения слайдов */
+    transition: transform 0.5s ease; /* Плавный переход при смене слайдов */
+}
+.slide {
+    min-width: 100%; /* Каждый слайд занимает 100% ширины контейнера */
+    opacity: 0; /* Скрываем слайды по умолчанию */
+    transition: opacity 0.5s ease; /* Плавный переход для изменения прозрачности */
+}
+.slide.active {
+    opacity: 1; /* Показываем активный слайд */
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10; /* Увеличиваем z-index, чтобы кнопки были поверх слайдов */
+}
+.prev {
+    left: 10px; /* Расположение кнопки "Назад" */
+}
+.next {
+    right: 10px; /* Расположение кнопки "Вперед" */
+}
+#slideInfo {
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #777; /* Серый цвет кнопки */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавный переход цвета и увеличение */
+}
+
+button:hover {
+    background-color: #888; /* Более светлый серый цвет при наведении */
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.user-info {
+    display: flex; /* Используем flexbox для выравнивания имени и кнопки */
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+#logoutButton {
+    margin-left: 15px; /* Отступ слева от имени пользователя */
+    background-color: #d9534f; /* Цвет кнопки выхода */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем рамку */
+    padding: 10px 15px; /* Отступы внутри кнопки */
+    border-radius: 5px; /* Закругленные углы */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s ease; /* Плавный переход цвета */
+}
+
+#logoutButton:hover {
+    background-color: #c9302c; /* Более темный цвет при наведении */
+}

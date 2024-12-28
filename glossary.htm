@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Словарь - Шоссе в никуда</title>
+    <style>
+        .description {
+            display: none; /* Скрываем описание по умолчанию */
+            margin-top: 10px;
+            border: 1px solid #aaa;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .term-button {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #353535;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+        .term-button:hover {
+            background-color: #000000;
+        }
+        .hidden {
+            display: none; /* Класс для скрытия элементов */
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <header>
+            <h1>Шоссе в никуда</h1>
+            <div class="user-info">
+                <span id="username">Имя пользователя</span>
+                <button id="logoutButton" onclick="logout()">Выйти</button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="description.htm">Описание</a></li>
+                    <li><a href="glossary.htm" class="active">Словарь</a></li>
+                    <li><a href="gallery.htm">Галерея</a></li>
+                    <li><a href="quiz.htm">Тест</a></li>
+                    <li><a href="profile.htm">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="main-container">
+                <h2>Словарь</h2>
+                <p>Погрузитесь в мир загадок и тайн, где каждое слово — это ключ к пониманию.</p>
+                
+                <!-- Поле для поиска -->
+                <input type="text" id="searchInput" placeholder="Поиск терминов..." onkeyup="searchTerms()">
+
+                <div id="termsList">
+                    <button class="term-button" onclick="toggleDescription('desc1')">Загадочные видеозаписи</button>
+                    <div id="desc1" class="description">
+                        Сквозь тьму и свет, они шепчут тайны, которые могут привести к бездне. Каждый кадр — это отражение внутреннего мира, где реальность и вымысел переплетаются.
+                    </div>
+
+                    <button class="term-button" onclick="toggleDescription('desc2')">Фред</button>
+                    <div id="desc2" class="description">
+                        Главный герой, потерянный в лабиринте своих страхов и желаний. Его путь — это шоссе, ведущее в никуда, где каждый поворот может стать последним.
+                    </div>
+
+                    <button class="term-button" onclick="toggleDescription('desc3')">Рене</button>
+                    <div id="desc3" class="description">
+                        Женщина, чье присутствие окутано тайной. Она — свет и тень, любовь и предательство, отражение того, что Фред не может понять.
+                    </div>
+
+                    <button class="term-button" onclick="toggleDescription('desc4')">Детектив</button>
+                    <div id="desc4" class="description">
+                        Странствующий по миру, где логика теряет смысл. Он ищет ответы, но находит лишь больше вопросов, погружаясь в бездну человеческой природы.
+                    </div>
+
+                    <button class="term-button" onclick="toggleDescription('desc5')">Тайна</button>
+                    <div id="desc5" class="description">
+                        Слово, которое не имеет определения. Это то, что скрыто за завесой реальности, то, что заставляет нас искать, даже когда мы боимся узнать правду.
+                    </div ```html
+                </div>
+                <p>Каждое определение — это лишь начало. Погружайтесь в мир, где каждое слово может изменить вашу реальность.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024</p>
+            <div class="contact-info">
+                <h3>Контактные данные</h3>
+                <p>Телефон: <a href="tel:">+7 (000) 000-00-00</a></p>
+                <p>Социальные сети:</p>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+                <p>Сайт.ру</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/script.js"></script>
+    <script>
+        // Функция для переключения отображения описания
+        function toggleDescription(descId) {
+            const description = document.getElementById(descId);
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block"; // Показываем описание
+            } else {
+                description.style.display = "none"; // Скрываем описание
+            }
+        }
+
+        // Функция для поиска терминов
+        function searchTerms() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const buttons = document.querySelectorAll('.term-button');
+
+            buttons.forEach(button => {
+                const text = button.textContent.toLowerCase();
+                const descriptionId = button.getAttribute('onclick').match(/'([^']+)'/)[1];
+                const description = document.getElementById(descriptionId).textContent.toLowerCase();
+
+                if (text.includes(filter) || description.includes(filter)) {
+                    button.style.display = "block"; // Показываем кнопку
+                    document.getElementById(descriptionId).style.display = "none"; // Скрываем описание
+                } else {
+                    button.style.display = "none"; // Скрываем кнопку
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Тест - Шоссе в никуда</title>
+</head>
+<body>
+    <div class="content-container">
+        <header>
+            <h1>Шоссе в никуда</h1>
+            <div class="user-info">
+                <span id="username">Имя пользователя</span>
+                <button id="logoutButton" onclick="logout()">Выйти</button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="description.htm">Описание</a></li>
+                    <li><a href="glossary.htm">Словарь</a></li>
+                    <li><a href="gallery.htm">Галерея</a></li>
+                    <li><a href="quiz.htm" class="active">Тест</a></li>
+                    <li><a href="profile.htm">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="quiz-container">
+                <h2>Тест на знание произведения</h2>
+                <form id="quizForm">
+                    <div class="question">
+                        <p>1. Какой год выхода произведения?</p>
+                        <input type="text" name="question1" placeholder="Введите год">
+                        <div class="result" id="result1"></div>
+                    </div>
+            
+                    <div class="question">
+                        <p>2. Какой жанр произведения?</p>
+                        <input type="text" name="question2" placeholder="Введите жанр">
+                        <div class="result" id="result2"></div>
+                    </div>
+            
+                    <div class="question">
+                        <p>3. Кто автор произведения?</p>
+                        <select name="question3">
+                            <option value="">Выберите автора</option>
+                            <option value="Автор 1">Дэвид Линч</option>
+                            <option value="Автор 2">Кубрик</option>
+                            <option value="Автор 3">Стивен Спилберг</option>
+                        </select>
+                        <div class="result" id="result3"></div>
+                    </div>
+            
+                    <div class="question">
+                        <p>4. Какой главный герой произведения?</p>
+                        <input type="text" name="question4" placeholder="Введите имя героя">
+                        <div class="result" id="result4"></div>
+                    </div>
+            
+                    <div class="question">
+                        <p>5. В каком городе происходит действие?</p>
+                        <select name="question5">
+                            <option value="">Выберите город</option>
+                            <option value="Город 1">Лос-Анжелес</option>
+                            <option value="Город 2">Снкт-Петербург</option>
+                            <option value="Город 3">Ереван</option>
+                        </select>
+                        <div class="result" id="result5"></div>
+                    </div>
+            
+                    <div class="question">
+                        <p>6. Какое основное событие произведения?</p>
+                        <input type="text" name="question6" placeholder="Введите событие">
+                        <div class="result" id="result6"></div>
+                    </div>
+            
+                    <button type="button" onclick="checkAnswers()">Проверить</button>
+                    <button type="button" id="resetButton" onclick="resetQuiz()">Пройти тест заново</button>
+                </form>
+                <div id="score"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024</p>
+            <div class="contact-info">
+                <h3>Контактные данные</h3>
+                <p>Телефон: <a href="tel:">+7 (000) 000-00-00</a></p>
+                <p>Социальные сети:</p>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+                <p>Сайт.ру</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
