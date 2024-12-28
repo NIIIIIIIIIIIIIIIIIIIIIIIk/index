@@ -31,7 +31,7 @@ function checkAnswers() {
     
     
     // Деактивация кнопки "Пройти тест заново"
-    resetButton.disabled = true;
+    
 }
 
 function loadLastTestResult() {
