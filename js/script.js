@@ -34,6 +34,16 @@ function checkAnswers() {
     
 }
 
+function resetQuiz() {
+    const form = document.getElementById('quizForm');
+    form.reset(); // Сброс формы
+    document.getElementById('score').textContent = ''; // Очистка результата
+    // Очистка результатов для каждого вопроса
+    for (let i = 1; i <= 6; i++) {
+        document.getElementById(`result${i}`).textContent = '';
+    }
+}
+
 function loadLastTestResult() {
     // Здесь вы можете получить результат теста из базы данных или локального хранилища
     const lastResult = "0 из 3"; // Пример результата, замените на реальный
